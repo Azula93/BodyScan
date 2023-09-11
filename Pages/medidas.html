@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Medidas</title>
+</head>
+<body>
+    <main>
+         <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg  bg-trasnparent fixed-top">
+        <div class="container">
+            <!-- LOGO -->
+          <a class="navbar-brand fs-4 nav-link" href="#">Body Scan</a>
+
+          <!-- TOGGLE Btn -->
+          <button class="navbar-toggler shadow-none border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <!-- SideBar -->
+          <div class="sidebar offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+
+            <!-- Sidebar Header -->
+            <div class="offcanvas-header text-black border-bottom">
+              <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menú</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+
+            <!-- SideBar body -->
+            <div class="offcanvas-body d-flex flex-column p-4 p-lg-0">
+
+              <ul class="navbar-nav justify-content-center align-items-center fs-5 flex-grow-1 pe-3">
+
+                <li class=" nav-item mx-2">
+                  <a class="nav-link active" aria-current="page" href="/Pages/index/index.html">Inicio</a>
+                </li>
+
+                <li class=" nav-item mx-2">
+                  <a class="nav-link" href="#">Valoracion Nutricional</a>
+                </li>
+
+                <li class=" nav-item mx-2">
+                    <a class="nav-link" href="/Pages/medidas.html">Medidas</a>
+                  </li>
+
+                <li class=" nav-item mx-2">
+                    <a class="nav-link" href="#">Blog</a>
+                </li> 
+              </ul>
+            </div>
+          </div>
+        </div>
+    </nav>
+    <!-- FIN NAVBAR -->
+
+    <!-- Indices antropometricos -->
+    <section class="indicesAntrop">
+        <h1 class="titlePrincipal"> Indices Antropmetricos basicos</h1>
+    
+    <!-- Calculo IMC -->
+    <section class="imcCalculo"> 
+
+        <p class="imcTexto">La obesidad y el sobrepeso se definen como una acumulación anormal o excesiva de grasa que puede ser perjudicial para la salud. Una forma simple de medir la obesidad es el <b>índice de masa corporal (IMC).</b> Se calcula dividiendo el peso de una persona en kilogramos por el cuadrado de la talla en metros.
+
+        En el caso de los adultos, una persona con un <b>IMC igual o superior a 30 es considerada obesa</b> y con <b>un IMC igual o superiora 25 es considerada con sobrepeso.</b>
+            
+        La obesidad es uno de los principales factores de riesgo para numerosas enfermedades crónicas, entre las que se incluyenla diabetes, las enfermedades cardiovasculares, la hipertensión y los accidentes cerebrovasculares, así como varios tiposde cáncer.  Además, los niños con sobrepeso tienen un mayor riesgo de tener sobrepeso o ser obesos en la edad adulta. 
+        <b>Fuente OMS</b></p>
+
+        <form class="datosImc" action="#">
+
+        
+        <legend class="ImcTitle">Calcula tu IMC</legend>
+
+        <div class="talla-section">
+            <label class="form-label" for="talla">Talla en metros: </label>
+            <input class="form-control " type="number" id="talla" placeholder="1.50m"  step="0.01" min="1" maxlength="4" pattern="^[0-9]+"  oninput="limitarNumero(this, 4)"> 
+            <p id="errorMensaje" style="color: crimson;"></p>
+        </div>
+         
+        <div class="peso-section">
+            <label class="form-label"  for="peso">Peso en Kg: </label>
+            <input class="form-control" type="number" id="peso" placeholder="50kg"  min="1" maxlength="3" pattern="^[0-9]+"  oninput="limitarNumero(this, 3)"> 
+            <p id="errorMensaje" style="color: crimson;"></p>
+        </div>
+    
+        <button class="btn btn-dark px-3 py-3 mx-auto" type="button" onclick="calculoImc()">
+            Calcular IMC
+        </button>
+
+        <section class="resultadoImc-section">
+             <span>
+                <p class="parrafo"> <b>Tu IMC es:</b> <div class="numeroImc" id="resultadoImc"> </div> </p>
+            </span> 
+            
+             <span>
+                <p class="parrafoRiesgo"> <b>Riesgo</b> <div class="seccionRiegosImc" id="riesgoImc"> </div> </p>
+             </span>  
+        </section>
+    </form>
+    </section>
+    <!-- FIN CALCULO IMC -->
+
+    <!-- ICC -->
+    <section class="IccCalculo"> 
+
+        <p class="IccTexto">El índice cintura-cadera es la relación que resulta de dividir el perímetro de la cintura de
+            una persona por el perímetro de su cadera, ambos valores en centímetros (cm).
+            Los estudios indican que una relación entre cintura y cadera <b> superior a 0.94 varones y
+            a 0.84 en mujeres, está asociada a un aumento en la probabilidad de contraer diversas
+            enfermedades </b>(diabetes mellitus, enfermedades coronarias, tensión arterial, entre
+            otras).
+        
+           <b> Un ICC elevado conlleva un riesgo cardiovascular con una consecuente limitación en la
+            calidad de vida y una disminución de la esperanza de vida.</b> <b>Tomado de neumadrid.org</b>
+        </p>
+
+        <form class="datosIcc" action="#">
+
+        <legend class="IccTitle">Calcula tu ICC</legend>
+
+        <div class="PerimetroCintura-section">
+            <label class="form-label" for="cintura">Perimetro Cintura en Cm: </label>
+            <input class="form-control " type="number" id="cintura" placeholder="60cm"  min="2" maxlength="3" pattern="^[0-9]+"  oninput="limitarNumero(this, 3)"> 
+            <p id="errorMensaje" style="color: crimson;"></p>
+        </div>
+         
+        <div class="PerimetroCadera-section">
+            <label class="form-label"  for="cadera">Perimetro Cadera en Cm: </label>
+            <input class="form-control" type="number" id="cadera" placeholder="92cm"  min="1" maxlength="3" pattern="^[0-9]+"  oninput="limitarNumero(this, 3)"> 
+            <p id="errorMensaje" style="color: crimson;"></p>
+        </div>
+
+        <!-- <p class="parrafo">El perimetro de este rectangulo es: </p><p class="resultadoPerimetro"> </p> -->
+    
+        <button class="btn btn-dark px-3 py-3 mx-auto" type="button" onclick="calculoIcc()">
+            Calcular ICC
+        </button>
+
+        <section class="resultadoImc-section">
+             <p class="parrafo"><b> Tu ICC es: </b> <div class="numeroIcc" id="resultadoIcc"> <b> </div>  </b></p> 
+        </section>
+    </form>
+    </section>
+    <!-- FIN ICC -->
+    </section>
+    <!-- FIN Indices antropometricos -->
+    </main>
+    <script src="/JS/imc.js"></script>
+    <script src="/JS/icc.js"></script>
+</body>
+</html>

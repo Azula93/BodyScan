@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/css/style.css">
+
+    <title>BodyScan</title>
+</head>
+<body class="vh-100 overflow-hidden">
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg  bg-trasnparent fixed-top">
+        <div class="container">
+            <!-- LOGO -->
+          <a class="navbar-brand fs-4 nav-link" href="#">Body Scan</a>
+
+          <!-- TOGGLE Btn -->
+          <button class="navbar-toggler shadow-none border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <!-- SideBar -->
+          <div class="sidebar offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+
+            <!-- Sidebar Header -->
+            <div class="offcanvas-header text-black border-bottom">
+              <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menú</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+
+            <!-- SideBar body -->
+            <div class="offcanvas-body d-flex flex-column p-4 p-lg-0">
+
+              <ul class="navbar-nav justify-content-center align-items-center fs-5 flex-grow-1 pe-3">
+
+                <li class=" nav-item mx-2">
+                  <a class="nav-link active" aria-current="page" href="/Pages/index/index.html">Inicio</a>
+                </li>
+
+                <li class=" nav-item mx-2">
+                  <a class="nav-link" href="#">Valoracion Nutricional</a>
+                </li>
+
+                <li class=" nav-item mx-2">
+                    <a class="nav-link" href="/Pages/medidas.html">Medidas</a>
+                  </li>
+
+                <li class=" nav-item mx-2">
+                    <a class="nav-link" href="#">Blog</a>
+                </li> 
+              </ul>
+            </div>
+          </div>
+        </div>
+    </nav>
+    <!-- FIN NAVBAR -->
+</body>
+
+</html>
