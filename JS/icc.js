@@ -9,46 +9,50 @@ function limitarNumero(input, maxLength) {
     }
   };
 
+
 //   Tomando el dato ingresado en el input
 const calculoIcc = () =>{
-    
+
+    const opciones = document.getElementsByName("genero");
+    let seleccionado = "";
+
+    for (const opcion of opciones) {
+      if (opcion.checked) {
+        seleccionado = opcion.value;
+        break; // Sale del bucle tan pronto como se encuentra una opción seleccionada
+      }
+    }
+    console.log("Opción seleccionada:", seleccionado);
+
+
     let cintura = document.getElementById("cintura").value;
     let cadera = document.getElementById("cadera").value;
-    
-    
+
     const formulaIcc = (cintura/cadera).toFixed(2);
     document.getElementById("resultadoIcc").innerHTML = formulaIcc;
 
 
     switch (true) {
 
-      case formulaIcc < 18.5:
-        resultado  = "Esto se clasifica como: BAJO PESO";
+      case formulaIcc < 0.85 && seleccionado === "mujer":
+        seleccionado  = "Esto se clasifica como: SIN RIESGO CARDIOVASCULAR";
         break;
         
-      case formulaIcc  >= 18.5 && formulaIcc <= 24.9:
-        resultado  = "Esto se clasifica como: PESO NORMAL";
-        break;
-        
-      case formulaIcc  >= 25 && formulaIcc <= 29.9:
-        resultado  = "Esto se clasifica como: OBESIDAD";
+      case formulaIcc  > 0.85 && seleccionado === "mujer":
+        seleccionado  = "Esto se clasifica como: CON RIESGO CARDIOVASCULAR";
         break;
 
-      case formulaIcc  >= 30 && formulaIcc <= 34.9:
-        resultado  = "Esto se clasifica como: OBESIDAD GRADO I";
-        break;
-        
-      case formulaIcc  >= 35 && formulaIcc <= 39.9:
-        resultado  = "Esto se clasifica como: OBESIDAD GRADO II";
-        break;
-  
-      case formulaIcc  >= 40:
-        resultado  = "Esto se clasifica como: OBESIDAD GRADO III";
-        break;
+      case formulaIcc < 0.94 && seleccionado === "hombre":
+        seleccionado  = "Esto se clasifica como: SIN RIESGO CARDIOVASCULAR";
+          break;  
+
+      case formulaIcc  > 0.94 && seleccionado === "hombre":
+          seleccionado  = "Esto se clasifica como: CON RIESGO CARDIOVASCULAR";
+          break;
 
       default:
-        resultado = " verifica tus datos"
+        seleccionado = " verifica tus datos"
 
 }
-  document.getElementById("resultadoImc").innerHTML += ` ${resultado}`;
+  document.getElementById("resultadoIcc").innerHTML += ` ${seleccionado}`;
 }
