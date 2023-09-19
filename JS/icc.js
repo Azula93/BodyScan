@@ -14,45 +14,45 @@ function limitarNumero(input, maxLength) {
 const calculoIcc = () =>{
 
     const opciones = document.getElementsByName("genero");
-    let seleccionado = "";
+    let Generoseleccionado = "";
 
     for (const opcion of opciones) {
       if (opcion.checked) {
-        seleccionado = opcion.value;
+        Generoseleccionado = opcion.value;
         break; // Sale del bucle tan pronto como se encuentra una opción seleccionada
       }
     }
-    console.log("Opción seleccionada:", seleccionado);
-
+    
 
     let cintura = document.getElementById("cintura").value;
     let cadera = document.getElementById("cadera").value;
 
     const formulaIcc = (cintura/cadera).toFixed(2);
-    document.getElementById("resultadoIcc").innerHTML = formulaIcc;
+    document.getElementById("numIcc").innerHTML = formulaIcc;
 
+    let resultadoIcc = "";
 
     switch (true) {
 
-      case formulaIcc < 0.85 && seleccionado === "mujer":
-        seleccionado  = "Esto se clasifica como: SIN RIESGO CARDIOVASCULAR";
+      case formulaIcc < 0.85 && Generoseleccionado === "mujer":
+        resultadoIcc  = "Esto se clasifica como: <b> SIN RIESGO CARDIOVASCULAR</b>";
         break;
         
-      case formulaIcc  > 0.85 && seleccionado === "mujer":
-        seleccionado  = "Esto se clasifica como: CON RIESGO CARDIOVASCULAR";
+      case formulaIcc  > 0.85 && Generoseleccionado === "mujer":
+        resultadoIcc  = "Esto se clasifica como: <b> CON RIESGO CARDIOVASCULAR </b>";
         break;
 
-      case formulaIcc < 0.94 && seleccionado === "hombre":
-        seleccionado  = "Esto se clasifica como: SIN RIESGO CARDIOVASCULAR";
+      case formulaIcc < 0.94 && Generoseleccionado === "hombre":
+        resultadoIcc  = "Esto se clasifica como: <b>SIN RIESGO CARDIOVASCULAR </b>";
           break;  
 
-      case formulaIcc  > 0.94 && seleccionado === "hombre":
-          seleccionado  = "Esto se clasifica como: CON RIESGO CARDIOVASCULAR";
+      case formulaIcc  > 0.94 && Generoseleccionado === "hombre":
+        resultadoIcc  = "Esto se clasifica como: <b> CON RIESGO CARDIOVASCULAR </b>";
           break;
 
       default:
-        seleccionado = " verifica tus datos"
+        resultadoIcc = " Verifica que los datos Ingresados sean correctos"
 
 }
-  document.getElementById("resultadoIcc").innerHTML += ` ${seleccionado}`;
+document.getElementById("resultadoIcc").innerHTML = resultadoIcc;
 }

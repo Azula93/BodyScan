@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="/sass/style.css">
     <title>Medidas</title>
 </head>
 <body>
@@ -60,7 +61,7 @@
     <!-- Indices antropometricos -->
     <section class="indicesAntrop">
         <h1 class="titlePrincipal"> Indices Antropmetricos basicos</h1>
-    
+          <h5 class="ImcCalculo-subtitle">¿Que es el IMC?</h5>
     <!-- Calculo IMC -->
     <section class="imcCalculo"> 
 
@@ -93,7 +94,9 @@
 
         <section class="resultadoImc-section">
              <span>
-                <p class="parrafo"> <b>Tu IMC es:</b> <div class="numeroImc" id="resultadoImc"> </div> </p>
+                <p class="parrafoImc" > <b>Tu IMC es:</b> </p>
+                <p class="resultImc" id="numImc"></p>
+                <div class="numeroImc" id="resultadoImc"> </div>
             </span> 
             
              <!-- <span>
@@ -106,6 +109,7 @@
 
     <!-- ICC -->
     <section class="IccCalculo"> 
+      <h5 class="IccCalculo-subtitle">¿Que es el ICC?</h5>
 
         <p class="IccTexto">El índice cintura-cadera es la relación que resulta de dividir el perímetro de la cintura de
             una persona por el perímetro de su cadera, ambos valores en centímetros (cm).
@@ -122,17 +126,20 @@
 
         <legend class="IccTitle">Calcula tu ICC</legend>
 
+        <section class="IccRadioBtn">
+
         <div>
-          <label>
+          <label class="Rbtn">
             <input type="radio" name="genero" value="mujer"> Mujer
           </label>
         </div>
 
         <div>
-          <label>
+          <label class="Rbtn">
             <input type="radio" name="genero" value="hombre"> Hombre
           </label>
         </div>
+      </section>
         
 
         <div class="PerimetroCintura-section">
@@ -153,14 +160,135 @@
             Calcular ICC
         </button>
 
-        <section class="resultadoImc-section">
-             <p class="parrafo"><b> Tu ICC es: </b> <div class="numeroIcc" id="resultadoIcc"> <b> </div>  </b></p> 
+        <section class="resultadoIcc-section">
+          <span>
+             <p class="parrafoIcc"><b> Tu ICC es: </b> </p> 
+             <p class="resultIcc" id="numIcc"></p>
+             <div class="numeroIcc" id="resultadoIcc"></div> 
+          </span> 
         </section>
     </form>
     </section>
     <!-- FIN ICC -->
     </section>
     <!-- FIN Indices antropometricos -->
+
+
+
+     <!-- Incio FOOTER -->
+     <footer class="footer bg-light text-dark pt-5 pb-4">
+      <div class="container text-center text-md-start">
+        <div class="row text-center text-md-start">
+          <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+            <h5 class="text-uppercase mb-4 font-weight-bold text-primary">Nosotros</h5>
+            <hr class="mb-4">
+            <p>
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa vitae qui pariatur deleniti, consequuntur explicabo accusamus tenetur quod id alias deserunt omnis aut veritatis, amet, cum praesentium quas labore eaque.
+            </p>
+          </div>
+
+          <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+            <h5 class="text-uppercase mb-4 font-weight-bold text-primary">
+              Déjanos Ayudarte</h5>
+              <hr class="mb-4">
+              <p>
+                <a href="#" class="text-dark">Tu cuenta</a>
+              </p>
+              <p>
+                <a href="#" class="text-dark">Tus Ordenes</a>
+              </p>
+              <p>
+                <a href="#" class="text-dark">Manejo de Cuenta</a>
+              </p>
+              <p>
+                <a href="#" class="text-dark">Ayuda</a>
+              </p>
+          </div>
+
+          <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+            <h5 class="text-uppercase mb-4 font-weight-bold text-primary">
+              Contáctanos</h5>
+              <hr class="mb-4">
+              <p>
+                <a href="#" class="text-dark">Nuestros Servicios</a>
+              </p>
+              <p>
+                <a href="#" class="text-dark">Inscribete</a>
+              </p>
+              <p>
+                <a href="#" class="text-dark">Manejo de Cuenta</a>
+              </p>
+              <p>
+                <a href="#" class="text-dark">Ayuda</a>
+              </p>
+          </div>
+
+          <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+            <h5 class="text-uppercase mb-4 font-weight-bold text-primary">
+              Contáctanos</h5>
+              <hr class="mb-4">
+              <p>
+                <li class="fas fa-home me-3"></li>Cali,Colombia
+              </p>
+
+              <p>
+                <li class="fas fa-envelope me-3"></li>test@bodyscan.com
+              </p>
+
+              <p>
+                <li class="fas fa-phone me-3"></li>+57 123 456 76
+              </p>
+              
+          </div>
+            <hr class="mb-4">
+
+            <div class="text-center mb-2 ">
+              <p>
+                Copyright Todos los derechos reservados
+                <a href="#">
+                  <strong class="text-primary">AzulaDev</strong>
+                </a>
+              </p>
+            </div>
+
+            <div class="text-center">
+              <ul class="list-unstyled list-inline">
+                <li class="list-inline-item">
+                  <a href="#" class="text-dark">
+                    <i class="fab fa-facebook"></i>
+                  </a>
+                </li>
+
+                <li class="list-inline-item">
+                  <a href="#" class="text-dark">
+                    <i class="fab fa-instagram"></i>
+                  </a>
+                </li>
+
+                <li class="list-inline-item">
+                  <a href="#" class="text-dark">
+                    <i class="fab fa-youtube"></i>
+                  </a>
+                </li>
+
+                <li class="list-inline-item">
+                  <a href="#" class="text-dark">
+                    <i class="fab fa-twitter"></i>
+                  </a>
+                </li>
+
+              </ul>
+
+            </div>
+
+
+
+        </div>
+
+      </div>
+
+    </footer>
+    <!-- FIN FOOTET -->
     </main>
     <script src="/JS/imc.js"></script>
     <script src="/JS/icc.js"></script>

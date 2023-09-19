@@ -20,34 +20,34 @@ const calculoImc = () =>{
     let resultado = '';
     
     const formulaImc = (Math.floor (peso / (tallaDecimal*tallaDecimal)) );
-    document.getElementById("resultadoImc").innerHTML = formulaImc;
+    document.getElementById("numImc").innerHTML = formulaImc;
    
     
 
     switch (true) {
 
       case formulaImc < 18.5:
-        resultado  = "Esto se clasifica como: BAJO PESO";
+        resultado  = "Esto se clasifica como: <b>BAJO PESO</b> ";
         break;
         
       case formulaImc  >= 18.5 && formulaImc <= 24.9:
-        resultado  = "Esto se clasifica como: PESO NORMAL";
+        resultado  = "Esto se clasifica como: <b>PESO NORMAL</b>";
         break;
         
       case formulaImc  >= 25 && formulaImc <= 29.9:
-        resultado  = "Esto se clasifica como: OBESIDAD";
+        resultado  = "Esto se clasifica como: <b>OBESIDAD</b>";
         break;
 
       case formulaImc  >= 30 && formulaImc <= 34.9:
-        resultado  = "Esto se clasifica como: OBESIDAD GRADO I";
+        resultado  = "Esto se clasifica como: <b>OBESIDAD GRADO I</b>";
         break;
         
       case formulaImc  >= 35 && formulaImc <= 39.9:
-        resultado  = "Esto se clasifica como: OBESIDAD GRADO II";
+        resultado  = "Esto se clasifica como: <b>OBESIDAD GRADO II</b>";
         break;
   
       case formulaImc  >= 40:
-        resultado  = "Esto se clasifica como: OBESIDAD GRADO III";
+        resultado  = "Esto se clasifica como: <b> OBESIDAD GRADO III</b>";
         break;
 
       default:
