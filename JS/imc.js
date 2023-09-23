@@ -9,7 +9,7 @@ function limitarNumero(input, maxLength) {
     }
   };
 
-//   Tomando el dato ingresado en el input
+//   Tomando el datos ingresados en el input
 
 const calculoImc = () =>{
   console.log("La función calculoImc se está ejecutando");

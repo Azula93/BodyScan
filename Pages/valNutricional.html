@@ -4,15 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="/sass/style.css">
 
 
     <title>Valoracion Nutricional</title>
 </head>
-<body>
 
+<body>
+<main>
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg  bg-trasnparent fixed-top">
         <div class="container">
@@ -60,19 +60,111 @@
     </nav>
     <!-- FIN NAVBAR -->
 
+    <section>
+      <h1 class="titleGet">Calcula tu GET</h1>
+    </section>
+    
+    <section class="infoGet">
+
+    
+      <section class="GetRadioBtn">
+
+        <p> <b> Elige una Opción</b></p>
+           <div>
+            
+             <label class="Rbtn">
+               <input type="radio" name="genero" value="mujer"> Mujer
+             </label>
+           </div>
+
+           <div>
+             <label class="Rbtn">
+               <input type="radio" name="genero" value="hombre"> Hombre
+             </label>
+           </div>
+         </section>
+
+         <section class="inputsGet">
+           <div class="tallaGet-section">
+             <label class="form-label" for="talla">Talla en Cm: </label>
+             <input class="form-control " type="number" id="talla" placeholder="170cm"  min="2" maxlength="3" pattern="^[0-9]+"  oninput="limitarNumero(this, 3)"> 
+             <p id="errorMensajeTalla" style="color: crimson;"></p>
+         </div>
+
+         <div class="pesoGet-section">
+           <label class="form-label" for="peso">Peso en Kg: </label>
+           <input class="form-control " type="number" id="peso" placeholder="60kg"  min="2" maxlength="2" pattern="^[0-9]+"  oninput="limitarNumero(this, 3)"> 
+           <p id="errorMensajePeso" style="color: crimson;"></p>
+       </div>
+
+        <div class="edadGet-section">
+         <label class="form-label" for="edad">Edad en años: </label>
+         <input class="form-control " type="number" id="edad" placeholder="25"  min="1" maxlength="2" pattern="^[0-9]+"  oninput="limitarNumero(this, 2)"> 
+         <p id="errorMensajeEdad" style="color: crimson;"></p>
+        </div>
+
+      </section>
+
+      <section class="factorActividad">
+        <p class="factorTitle">Factor de la actividad Fisica</p>
+
+        <section class="FaRadioBtn">
+
+          <p class="subtitleFa"> Elige una Opción</p>
+             <div>
+              
+               <label class="Rbtn">
+                 <input type="radio" name="factorActividad" value="Menos de 3 horas semanales"> Menos de 3 horas semanales
+               </label>
+             </div>
+
+             <label class="Rbtn">
+              <input type="radio" name="factorActividad" value="3 Horas semanales"> 3 Horas semanales
+            </label>
+          </div>
+
+          <label class="Rbtn">
+            <input type="radio" name="factorActividad" value="6 Horas semanales"> 6 Horas semanales
+          </label>
+        </div>
+  
+             <div>
+               <label class="Rbtn">
+                 <input type="radio" name="factorActividad" value="4-5 horas semanales"> 4-5 horas semanales
+               </label>
+             </div>
+           </section>
+
+    
+      </section>
+
+      <section class="btnResultGet">
+        <button class="btn btn-dark px-3 py-3 mx-auto btnResultGet" type="button" id="mostrarSeleccion" onclick="calculoGet()">
+          Calcular GET
+      </button>
+
+      <section class="resultadoGet-section">
+           <span>
+              <p class="parrafoGet" > <b>Tu GET es:</b> </p>
+              <p class="resultGet" id="opcionSeleccionada"></p>
+              <div class="numeroGet" id="resultadoGet"> </div>
+          </span> 
+      </section>
+    </section>
+    </section>
 
 
-
-
+    
     <!-- Incio FOOTER -->
     <footer class="footer bg-dark pt-5 pb-4">
-      <div class="container text-center text-md-start">
+      <div class=" text-center text-md-start">
         <div class="row text-center text-md-start">
           <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
             <h5 class="text-uppercase mb-4 font-weight-bold ">Nosotros</h5>
             <hr class="mb-4 ">
             <p class="text-white">
-              En BodyScan, nuestra misión es brindarte las herramientas y la información necesaria para tomar el control de tu salud y bienestar. Creemos en la importancia de comprender tus medidas antropométricas, como el IMC, ICC y la valoración nutricional, para tomar decisiones informadas sobre tu estilo de vida y tu dieta. Nuestro equipo está comprometido en proporcionarte una experiencia precisa y fácil de usar para ayudarte a alcanzar tus objetivos de salud.
+              Nuestra misión en BodyScan es brindarte los datos que necesitas para mejorar tu salud y bienestar. Creemos en la importancia de entender tus medidas corporales para tomar decisiones informadas sobre tu estilo de vida y dieta. Nuestro equipo se dedica a ofrecerte una experiencia precisa y amigable para que puedas alcanzar tus metas de salud.
+
             </p>
           </div>
 
@@ -177,6 +269,10 @@
 
     </footer>
     <!-- FIN FOOTER -->
+
     
+  </main>
+    <script src="/JS/valnutri.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
 </body>
 </html>

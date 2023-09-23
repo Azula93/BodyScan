@@ -13,6 +13,7 @@ function limitarNumero(input, maxLength) {
 //   Tomando el dato ingresado en el input
 const calculoIcc = () =>{
 
+  // Toma los datos ingresados en el genero
     const opciones = document.getElementsByName("genero");
     let Generoseleccionado = "";
 
