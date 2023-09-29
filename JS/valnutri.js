@@ -1,20 +1,61 @@
+
+
+
 // funcion para limitar la cantidad de numeros ingresados en los inputs
 function limitarNumero(input, maxLength) {
   if (input.value.length > maxLength) {
     input.value = input.value.slice(0, maxLength);
     document.getElementById('errorMensajeTalla').textContent = 'Máximo 3 dígitos permitidos.';
     document.getElementById('errorMensajePeso').textContent = 'Máximo 3 dígitos permitidos.';
-    document.getElementById('errorMensajeEdad').textContent = 'Máximo 3 dígitos permitidos.';
+    document.getElementById('errorMensajeEdad').textContent = 'Máximo 2 dígitos permitidos.';
   } else {
     document.getElementById('errorMensajeTalla').textContent = '';
   }
 };
 
 
+// function EleccioDeporte(){
+//   // Toma los datos ingresados en el deporte
+//  const opcionesDeporte = document.getElementsByName("Deportista");
+//  let Deporteseleccionado = "";
 
+//  for (const opcion of opcionesDeporte) {
+//    if (opcion.checked) {
+//      Deporteseleccionado = opcion.value;
+//      break; // Sale del bucle tan pronto como se encuentra una opción seleccionada
+//    }
+//  }
+//  console.log(Deporteseleccionado);
+// }
 
-const calculoGet = () =>{
-  console.log('funcion get');
+// function macronutrientesDiarios() {
+
+//   // porcentajes para calcular los gramos requeridos
+//   // const Carbohidratos = 50;
+//   // console.log(Carbohidratos);
+//   // const Proteinas  = 25;
+//   // console.log(Proteinas);
+//   // const Grasas = 25;
+//   // console.log(Grasas);
+
+  
+
+//   const GrCarbohidratos = resultadoGet * 0.50;
+//   console.log(GrCarbohidratos);
+//   const GrProteinas  = resultadoGet * 0.25;
+//   console.log(GrProteinas);
+//   const GrGrasas = resultadoGet * 0.25;
+//   console.log(GrGrasas);
+
+//   document.getElementById("resultadoMacronut").textContent = `Tu requerimiento de carbohidratos en gramos es ${GrCarbohidratos},
+//   Tu requerimiento de Proteinas en gramos es ${GrProteinas},
+//   Tu requerimiento de Grasas en gramos es ${GrGrasas}`;
+
+// }
+
+function calculoGet(){
+
+        let resultadoGet = "";
 
        // Toma los datos ingresados en el genero
        const opcionesGenero = document.getElementsByName("genero");
@@ -28,12 +69,9 @@ const calculoGet = () =>{
        }
        console.log(Generoseleccionado);
   
-      const talla = document.getElementById("talla").value;
-      console.log(talla);
-      const peso = document.getElementById("peso").value;
-      console.log(peso)
+      const talla = document.getElementById("talla").value;     
+      const peso = document.getElementById("peso").value;  
       const edad = document.getElementById("edad").value;
-      console.log(edad);
       
        // Toma los datos ingresados en el factor de actividad
        const opcionesFactorAct = document.getElementsByName("factorActividad");
@@ -44,16 +82,17 @@ const calculoGet = () =>{
           factorActividad = opcion.value;
            break; 
          }
-       }
+       };
        console.log(factorActividad);
-
+       
         // FORMULAS
 
-        const formulaHombres = (66.5 + 13.75 *peso + 5.0 * talla - 6.78 *edad)
-        const formulaMujeres = (655 + 9.56* peso + 1.85 * talla - 4.68 * edad)
+        const formulaHombres = (66.5 + 13.75 *peso + 5.0 * talla - 6.78 *edad);
+        console.log(formulaHombres);
+        const formulaMujeres = (655 + 9.56* peso + 1.85 * talla - 4.68 * edad);
+        console.log(formulaMujeres);
 
-
-       let resultadoGet = "";
+        
 
   switch (true) {
 
@@ -95,8 +134,27 @@ const calculoGet = () =>{
           resultadoGet = " Verifica que hayas ingresado todos los datos !"
 
 }
-// muestra el resultado en pantalla
-document.getElementById("resultadoGet").innerHTML = resultadoGet;
+
+  const GrCarbohidratos = formulaMujeres  * 0.50;
+  console.log(GrCarbohidratos);
+  const GrProteinas  = resultadoGet * 0.25;
+  console.log(GrProteinas);
+  const GrGrasas = resultadoGet * 0.25;
+  console.log(GrGrasas);
+
+  document.getElementById("resultadoMacronut").textContent = `Tu requerimiento de carbohidratos en gramos es ${GrCarbohidratos},
+  Tu requerimiento de Proteinas en gramos es ${GrProteinas},
+  Tu requerimiento de Grasas en gramos es ${GrGrasas}`;
+
+  // muestra el resultado en pantalla
+  document.getElementById("resultadoGet").innerHTML = resultadoGet;
+  console.log(resultadoGet);
+
+  // macronutrientesDiarios(resultadoGet)
 
 }
+
+
+
+
 

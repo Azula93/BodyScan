@@ -17,7 +17,7 @@
     <nav class="navbar navbar-expand-lg  bg-trasnparent fixed-top">
         <div class="container">
             <!-- LOGO -->
-          <a class="navbar-brand fs-4 nav-link" href="#">Body Scan</a>
+          <a class="navbar-brand fs-4 nav-link" href="/Pages/index/index.html">Body Scan</a>
 
           <!-- TOGGLE Btn -->
           <button class="navbar-toggler shadow-none border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
@@ -47,7 +47,7 @@
                 </li>
 
                 <li class=" nav-item mx-2">
-                    <a class="nav-link" href="/Pages/medidas.html">Medidas</a>
+                    <a class="nav-link" href="/Pages/medidas.html">Antropometría</a>
                   </li>
 
                 <li class=" nav-item mx-2">
@@ -60,33 +60,37 @@
     </nav>
     <!-- FIN NAVBAR -->
 
-    <section>
+    <section class="get">
       <h1 class="titleGet">Calcula tu GET</h1>
+      <p class="get-parrafo"> El gasto energético total (GET) es la cantidad total de energía que una persona gasta en un día típico.
+        El GET es importante porque proporciona una idea de la cantidad de calorías que una persona necesita consumir
+         en un día para mantener su peso actual, perder peso o ganar peso, dependiendo de sus objetivos. 
+         El conocimiento del (GET) también es esencial para planificar dietas y programas de ejercicio adecuados para alcanzar metas de salud y estado físico. <br>
+        Para calcular tu GET ingresa los siguientes datos:</p>
     </section>
     
     <section class="infoGet">
+      <p> <b> Sexo:</b></p>
 
-    
-      <section class="GetRadioBtn">
+        <section class="GetRadioBtn">
+       
 
-        <p> <b> Elige una Opción</b></p>
-           <div>
-            
-             <label class="Rbtn">
-               <input type="radio" name="genero" value="mujer"> Mujer
-             </label>
+           <div class="form-check">
+            <input class="form-check-input" type="radio" name="genero" value="mujer">
+             <label class="Rbtn form-check-label"> Femenino </label>
            </div>
 
-           <div>
-             <label class="Rbtn">
-               <input type="radio" name="genero" value="hombre"> Hombre
-             </label>
+           <div class="form-check">
+            <input class="form-check-input" type="radio" name="genero" value="hombre">
+             <label class="Rbtn form-check-label"> Masculino</label>
            </div>
          </section>
 
          <section class="inputsGet">
+          <p class="inputsGet-parrafo">Ingresa los siguientes datos:</p>
+
            <div class="tallaGet-section">
-             <label class="form-label" for="talla">Talla en Cm: </label>
+             <label class="form-label " for="talla">Talla en Cm: </label>
              <input class="form-control " type="number" id="talla" placeholder="170cm"  min="2" maxlength="3" pattern="^[0-9]+"  oninput="limitarNumero(this, 3)"> 
              <p id="errorMensajeTalla" style="color: crimson;"></p>
          </div>
@@ -106,11 +110,11 @@
       </section>
 
       <section class="factorActividad">
-        <p class="factorTitle">Factor de la actividad Fisica</p>
+        <h2 class="factorTitle">Factor de la actividad Fisica</h2>
 
         <section class="FaRadioBtn">
 
-          <p class="subtitleFa"> Elige una Opción</p>
+          <p class="subtitleFa"> De las siguientes opciones elige cuantas veces por semana practicas deporte y/o actividad fisica</p>
              <div>
               
                <label class="Rbtn">
@@ -153,6 +157,47 @@
     </section>
     </section>
 
+    <section class="Macro">
+      <section >
+        <h2 class="MacroTitle">Requerimiento de Macronutrientes Diario </h2>
+      </section>
+
+      <p class="Macro-parrafo"> A continuación podras calcular tu requerimiento de macronutrientes diario en gramos distribuidos en carbohidratos, proteinas y grasas. <br>
+          Selecciona una de las siguientes opciones segun sea tu caso:
+      </p>
+
+      <section class="DeporteRadioBtn">
+
+           <div class="form-check">
+            <input class="form-check-input" type="radio" name="Deportista" value="Deportista">
+             <label class="Rbtn form-check-label">Deportista</label>
+           </div>
+
+           <div class="form-check">
+            <input class="form-check-input" type="radio" name="Deportista" value="No deportista">
+             <label class="Rbtn form-check-label">No deportista</label>
+           </div>
+         </section>
+
+      <section class="btnResultDeporte">
+        <button class="btn btn-dark px-3 py-3 mx-auto btnResultGet" type="button" id="mostrarDeporte" onclick="macronutrientesDiarios()" >
+          Calcular Requerimiento
+      </button>
+
+      <section class="resultadoMacronut-section">
+        <span>
+           <p class="parrafoMacronut" > Tus requerimientos de macronutrientes en Gramos son: </p>
+           <p class="resultMacronut" id="opcionSeleccionada"></p>
+           <div class="numeroMacronut" id="resultadoMacronut"> </div>
+       </span> 
+   </section>
+
+    </section>
+
+    <section>
+      <p>En el siguiente <a href="#">LINK</a> podras obtener mas informacion acerca de la dieta que debes seguir </p>
+    </section>
+    
 
     
     <!-- Incio FOOTER -->
@@ -272,7 +317,7 @@
 
     
   </main>
-    <script src="/JS/valnutri.js"></script>
+    <script src="/JS/intento.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
 </body>
 </html>
