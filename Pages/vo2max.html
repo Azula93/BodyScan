@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="/sass/style.css">
 
-    <title>Blog</title>
+    <title>Vo2 Máximo</title>
 </head>
 <body>
     <main>
@@ -42,22 +42,24 @@
                 </li>
 
                 <li class=" nav-item mx-2">
-                  <a class="nav-link" href="/Pages/medidas.html">Antropometría</a>
+                    <a class="nav-link" href="/Pages/medidas.html">Antropometría</a>
                 </li>
 
                 <li class=" nav-item mx-2">
                   <a class="nav-link" href="/Pages/valNutricional.html">Valoracion Nutricional</a>
                 </li>
-
-                  <li class=" nav-item mx-2">
+ 
+                <li class=" nav-item mx-2">
                     <a class="nav-link" href="/Pages/vo2max.html">Vo2Máx</a>
-                </li>
+                </li> 
 
                 <li class=" nav-item mx-2">
                     <a class="nav-link" href="/Pages/blog.html">Blog</a>
                 </li> 
 
-                
+              
+
+
               </ul>
             </div>
           </div>
@@ -65,31 +67,79 @@
     </nav>
     <!-- FIN NAVBAR -->
 
-    <section id="introduccion">
-        <h2>¿Qué es el plato saludable de la familia colombiana?</h2>
-        <p>Es el ícono de las Guías alimentarias, que nos ayuda a recordar
-            los seis grupos de alimentos que debemos consumir durante el día
-            para elegir una alimentación variada y saludable.
-            Nuestro país ofrece una gran variedad de alimentos de estos seis
-            grupos, por ello debemos aprovechar esta riqueza y diversidad. 
-            </p>
-    </section>
+        <section class="vo2-section">
+            <section class="vo2-section-titlos">
+                <h1 class="vo2-section-titleone">Vo2 Máximo</h1>
+                <h2 class="vo2-section-subtitle">Test de la Banca</h2>
+                <p class="vo2-section-parrafo">Es una prueba de esfuerzo que mide la capacidad aeróbica del paciente, en donde por medio de formulas puede estimar el VO2 max, los MET´s y la expectativa de vida del paciente. </p>
+            </section>
 
-    <section id="grupos-de-alimentos">
-        <h2>Grupos de Alimentos</h2>
-        <img src="/assets/gruposAlimentos.png" alt="gruposalimentos">
-        <img src="/assets/promoverAlimentacion.png" alt="">
-    </section>
+            <section class="vo2-section-datos">
 
-    <section id="porciones-recomendadas">
-        <h2>Plato saludable de la Familia Colombiana</h2>
-        <p>El Plato saludable de la Familia Colombiana nos ayuda a elegir una alimentación variada.
-            Nos indica que en cada tiempo de comida, se deben incluir alimentos de todos los grupos
-            o su mayoría, en cantidades o porciones adecuadas.
-            Por otra parte, los alimentos representados en el Plato saludable de la Familia Colombiana nos
-            invitan a comer más alimentos frescos y menos alimentos procesados industrialmente, ya
-            que estos pueden contener azúcares, sodio y grasa añadidos, que los hacen poco saludables.</p>
-    </section>
+                <div class="ppm-section">
+                    <p>Debes convertir los valores de BPM a PPM, ingresa en la siguiente casilla los datos de BPM</p>
+                    <label class="form-label" for="BPM">BPM: </label>
+                    <input class="form-control " type="number" id="BPM" placeholder="PPM"  step="0.01" min="1" maxlength="3" pattern="^[0-9]+"  oninput="limitarNumero(this, 3)"> 
+                    <p id="errorMensajePPM" style="color: crimson;"></p>
+                </div>
+
+                <div class="H-section">
+                    <p>Ingresa el dato de la altura en Cm</p>
+                    <label class="form-label" for="H">Altura de la Banca: </label>
+                    <input class="form-control " type="number" id="H" placeholder="45cm"  step="0.01" min="1" maxlength="4" pattern="^[0-9]+"  oninput="limitarNumero(this, 2)"> 
+                    <p id="errorMensajeH" style="color: crimson;"></p>
+                </div>
+
+                <button class="btn btn-dark px-3 py-3 mx-auto" type="button" onclick="calculoVo2()">
+                    Calcular Vo2 Máx
+                </button>
+        
+                <section class="resultadoVo2-section">
+                     <span>
+                        <p class="parrafoVo2" > <b>Tu Vo2 Máximo es:</b> </p>
+                        <p class="resultVo2" id="numVo2"></p>
+                        <div class="numeroVo2" id="resultadoVo2"> </div>
+                    </span> 
+                </section>
+
+                <section class="resultadoMets-section">
+                    <span>
+                       <p class="parrafoMets" > <b>los METs (Metabolic Equivalent of Task) </b> son una medida para cuantificar la intensidad del ejercicio en relación con el consumo de oxígeno 
+                        y el gasto metabólico. <br> <b>Según tu Vo2Máx tus METS son:</b></p>
+                       <p class="resultMets" id="numMets"></p>
+                       <div class="numeroMets" id="resultadoMets"> </div>
+                   </span> 
+               </section>
+
+               <section class="expectVida-section">
+
+                <p class="parrafoexpectVida">Si quieres conocer tu <b>EXPECTATIVA DE VIDA</b> selecciona la cantidad de ejercicio que realizas </p>
+
+                <section class="expectVida-section-radiobtn">
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="expectvida" value="menos 3 v-s">
+                        <label class="Rbtn form-check-label"> Menos de 3 veces por Semana</label>
+                    </div>
+
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="expectvida" value="mas 3 v-s">
+                        <label class="Rbtn form-check-label"> 3 o más veces por Semana</label>
+                    </div>
+                </section>
+
+               <section class="btnResultExpectvida">
+                <button class="btn btn-dark px-3 py-3 mx-auto btnResultGet" type="button" id="mostrarSeleccion" onclick="ExpectativaVida()">
+                    Calcular Expectativa de Vida
+                  </button>
+               </section>
+           </section>
+
+            <span>
+                <p class="resultexpectVida" id="numexpectVida"></p>
+                <div class="numeroexpectVida" id="resultadoexpectVida"> </div>
+            </span> 
+            
+        </section>
 
      <!-- Incio FOOTER -->
      <footer class="footer bg-dark pt-5 pb-4">
@@ -203,5 +253,6 @@
      </footer>
       <!-- FIN FOOTER -->
     </main>
+    <script src="/JS/vo2.js"></script>
 </body>
 </html>

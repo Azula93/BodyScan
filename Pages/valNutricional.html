@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="/sass/style.css">
 
@@ -17,7 +18,7 @@
     <nav class="navbar navbar-expand-lg  bg-trasnparent fixed-top">
         <div class="container">
             <!-- LOGO -->
-          <a class="navbar-brand fs-4 nav-link" href="/Pages/index/index.html">Body Scan</a>
+          <a class="navbar-brand fs-4 nav-link" href="/Pages/pagInicio.html">Body Scan</a>
 
           <!-- TOGGLE Btn -->
           <button class="navbar-toggler shadow-none border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
@@ -39,20 +40,26 @@
               <ul class="navbar-nav justify-content-center align-items-center fs-5 flex-grow-1 pe-3">
 
                 <li class=" nav-item mx-2">
-                  <a class="nav-link active" aria-current="page" href="/Pages/index/index.html">Inicio</a>
+                  <a class="nav-link active" aria-current="page" href="/Pages/pagInicio.html">Inicio</a>
+                </li>
+
+                <li class=" nav-item mx-2">
+                  <a class="nav-link" href="/Pages/medidas.html">Antropometría</a>
                 </li>
 
                 <li class=" nav-item mx-2">
                   <a class="nav-link" href="/Pages/valNutricional.html">Valoracion Nutricional</a>
                 </li>
 
-                <li class=" nav-item mx-2">
-                    <a class="nav-link" href="/Pages/medidas.html">Antropometría</a>
-                  </li>
+                  <li class=" nav-item mx-2">
+                    <a class="nav-link" href="/Pages/vo2max.html">Vo2Máx</a>
+                </li> 
 
                 <li class=" nav-item mx-2">
-                    <a class="nav-link" href="#">Blog</a>
+                    <a class="nav-link" href="/Pages/blog.html">Blog</a>
                 </li> 
+
+                
               </ul>
             </div>
           </div>
@@ -74,7 +81,6 @@
 
         <section class="GetRadioBtn">
        
-
            <div class="form-check">
             <input class="form-check-input" type="radio" name="genero" value="mujer">
              <label class="Rbtn form-check-label"> Femenino </label>
@@ -97,7 +103,7 @@
 
          <div class="pesoGet-section">
            <label class="form-label" for="peso">Peso en Kg: </label>
-           <input class="form-control " type="number" id="peso" placeholder="60kg"  min="2" maxlength="2" pattern="^[0-9]+"  oninput="limitarNumero(this, 3)"> 
+           <input class="form-control " type="number" id="peso" placeholder="60kg"  min="2" maxlength="2" pattern="^[0-9]+"  oninput="limitarNumero(this, 2)"> 
            <p id="errorMensajePeso" style="color: crimson;"></p>
        </div>
 
@@ -115,37 +121,34 @@
         <section class="FaRadioBtn">
 
           <p class="subtitleFa"> De las siguientes opciones elige cuantas veces por semana practicas deporte y/o actividad fisica</p>
-             <div>
-              
-               <label class="Rbtn">
-                 <input type="radio" name="factorActividad" value="Menos de 3 horas semanales"> Menos de 3 horas semanales
-               </label>
+             
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="factorActividad" value="Menos de 3 horas semanales">
+               <label class="Rbtn form-check-label">Menos de 3 horas semanales</label>
              </div>
 
-             <label class="Rbtn">
-              <input type="radio" name="factorActividad" value="3 Horas semanales"> 3 Horas semanales
-            </label>
-          </div>
+             <div class="form-check"> 
+             <input class="form-check-input" type="radio" name="factorActividad" value="3 Horas semanales">
+              <label class="Rbtn form-check-label"> 3 Horas semanales</label>
+            </div>
 
-          <label class="Rbtn">
-            <input type="radio" name="factorActividad" value="6 Horas semanales"> 6 Horas semanales
-          </label>
-        </div>
+            <div class="form-check"> 
+              <input class="form-check-input" type="radio" name="factorActividad" value="6 Horas semanales"> 
+              <label class="Rbtn form-check-label">6 Horas semanales</label>
+           </div>
   
-             <div>
-               <label class="Rbtn">
-                 <input type="radio" name="factorActividad" value="4-5 horas semanales"> 4-5 horas semanales
-               </label>
+             <div class="form-check">
+              <input class="form-check-input" type="radio" name="factorActividad" value="4-5 horas Diarias">
+               <label class="Rbtn form-check-label">4-5 horas Diarias</label>
              </div>
            </section>
-
-    
       </section>
 
       <section class="btnResultGet">
-        <button class="btn btn-dark px-3 py-3 mx-auto btnResultGet" type="button" id="mostrarSeleccion" onclick="calculoGet()">
-          Calcular GET
-      </button>
+
+          <button class="btn btn-dark px-3 py-3 mx-auto btnResultGet" type="button" id="mostrarSeleccion" onclick="calculoGet()">
+            Calcular GET
+          </button>
 
       <section class="resultadoGet-section">
            <span>
@@ -162,8 +165,8 @@
         <h2 class="MacroTitle">Requerimiento de Macronutrientes Diario </h2>
       </section>
 
-      <p class="Macro-parrafo"> A continuación podras calcular tu requerimiento de macronutrientes diario en gramos distribuidos en carbohidratos, proteinas y grasas. <br>
-          Selecciona una de las siguientes opciones segun sea tu caso:
+      <p class="Macro-parrafo"> A continuación podras calcular tu requerimiento de macronutrientes diario en gramos, distribuidos en: carbohidratos, proteinas y grasas. <br>
+          Selecciona una de las siguientes opciones según sea tu caso:
       </p>
 
       <section class="DeporteRadioBtn">
@@ -190,12 +193,11 @@
            <p class="resultMacronut" id="opcionSeleccionada"></p>
            <div class="numeroMacronut" id="resultadoMacronut"> </div>
        </span> 
-   </section>
-
+    </section>
     </section>
 
-    <section>
-      <p>En el siguiente <a href="#">LINK</a> podras obtener mas informacion acerca de la dieta que debes seguir </p>
+    <section class="dieta-section">
+      <p class="dieta-section-parrafo">En el siguiente <a class="link-dieta text-primary" href="/Pages/blog.html">LINK</a> podras obtener mas informacion acerca de la dieta que debes seguir </p>
     </section>
     
 
@@ -317,7 +319,7 @@
 
     
   </main>
-    <script src="/JS/intento.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    <script src="/JS/ValoracionNut.js"></script>
+    
 </body>
 </html>

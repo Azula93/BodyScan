@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="/sass/style.css">
 
@@ -18,7 +17,7 @@
     <nav class="navbar navbar-expand-lg  bg-trasnparent fixed-top">
         <div class="container">
             <!-- LOGO -->
-          <a class="navbar-brand fs-4 nav-link" href="/Pages/index/index.html">Body Scan</a>
+          <a class="navbar-brand fs-4 nav-link" href="/Pages/pagInicio.html">Body Scan</a>
 
           <!-- TOGGLE Btn -->
           <button class="navbar-toggler shadow-none border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
@@ -40,20 +39,26 @@
               <ul class="navbar-nav justify-content-center align-items-center fs-5 flex-grow-1 pe-3">
 
                 <li class=" nav-item mx-2">
-                  <a class="nav-link active" aria-current="page" href="/Pages/index/index.html">Inicio</a>
+                  <a class="nav-link active" aria-current="page" href="/Pages/pagInicio.html">Inicio</a>
                 </li>
+
+                <li class=" nav-item mx-2">
+                  <a class="nav-link" href="/Pages/medidas.html">Antropometría</a>
+              </li>
 
                 <li class=" nav-item mx-2">
                   <a class="nav-link" href="/Pages/valNutricional.html">Valoracion Nutricional</a>
                 </li>
 
-                <li class=" nav-item mx-2">
-                    <a class="nav-link" href="/Pages/medidas.html">Antropometría</a>
-                  </li>
+                  <li class=" nav-item mx-2">
+                    <a class="nav-link" href="/Pages/vo2max.html">Vo2Máx</a>
+                </li> 
 
                 <li class=" nav-item mx-2">
-                    <a class="nav-link" href="#">Blog</a>
-                </li> 
+                    <a class="nav-link" href="/Pages/blog.html">Blog</a>
+                </li>
+                
+               
               </ul>
             </div>
           </div>
@@ -83,7 +88,7 @@
                 <p class="card-text">Realiza la evaluación de los índices antropométricos básicos, como el IMC  y el ICC. 
                   Estos índices te permitirán estimar tu estado de salud general, evaluar el riesgo cardiovascular y determinar tu peso ideal.
                 </p>
-                <a href="../medidas.html" class="btn btn-primary d-block mx-auto d-block mx-auto card-button">Ver más</a>
+                <a href="/Pages/medidas.html" class="btn btn-primary d-block mx-auto d-block mx-auto card-button">Ver más</a>
               </div>
             </div>
           </div>
@@ -92,13 +97,26 @@
           <div class="col-md-6 col-lg-4 mb-4">
             <div class="card">
               <div class="card-image">
-                <img class="card-image-1 img-fluid" src="/assets/img (10).svg" alt="">
+                <img class="card-image-1 img-fluid" src="/assets/img(20).svg" alt="">
               </div>
               <div class="card-body">
                 <h5 class="card-title">Valoración nutricional</h5>
                 <p class="card-text">Calcula tu tasa metabólica basal y determina tus necesidades nutricionales diarias de proteínas, carbohidratos, grasas y micronutrientes utilizando nuestra calculadora de calorias
                 </p>
-                <a href="../valNutricional.html" class="btn btn-primary d-block mx-auto d-block mx-auto card-button">Ver más</a>
+                <a href="/Pages/valNutricional.html" class="btn btn-primary d-block mx-auto d-block mx-auto card-button">Ver más</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4 mb-4">
+            <div class="card">
+              <div class="card-image">
+                <img class="card-image-1 img-fluid" src="/assets/img(21).svg" alt="">
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">Vo2 Máximo</h5>
+                <p class="card-text">Calcula tu Vo2 Máximo y tu METS ! </p>
+                <a href="/Pages/vo2max.html" class="btn btn-primary d-block mx-auto d-block mx-auto card-button">Ver más</a>
               </div>
             </div>
           </div>
@@ -114,7 +132,7 @@
                 <p class="card-text">Aprende cómo distribuir los alimentos en tu plato utilizando la guía nutricional del ICBF. 
                   En esta guía, encontrarás los porcentajes recomendados por grupo alimenticio que debes incluir en tus comidas
                 </p>
-                <a href="#" class=" btn btn-primary d-block mx-auto d-block mx-auto card-button">Ver más</a>
+                <a href="/Pages/blog.html" class=" btn btn-primary d-block mx-auto d-block mx-auto card-button">Ver más</a>
               </div>
             </div>
           </div>
@@ -235,6 +253,7 @@
     </footer>
     <!-- FIN FOOTER -->
   </main>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
 </body>
 
 </html>
