@@ -9,6 +9,12 @@ function limitarNumero(input, maxLength) {
     }
   };
 
+  // trae las imagenes que se muestran en el resultado final
+  const imagenMujerOk = '/assets/img(22).svg';
+  const imagenMujerbad = '/assets/img(24).svg';
+  const imagenHombreOk = '/assets/img(23).svg';
+  const imagenHombreBad = '/assets/img(25).svg';
+  const iccimgError = "/assets/img(27).svg";
 
 //   Tomando el dato ingresado en el input
 const calculoIcc = () =>{
@@ -29,31 +35,35 @@ const calculoIcc = () =>{
     let cadera = document.getElementById("cadera").value;
 
     const formulaIcc = (cintura/cadera).toFixed(2);
-    document.getElementById("numIcc").innerHTML = formulaIcc;
+    // document.getElementById("numIcc").innerHTML = formulaIcc;
 
     let resultadoIcc = "";
+    let errorIcc = '';
 
     switch (true) {
 
+      // CASOS MUJERES 
       case formulaIcc < 0.85 && Generoseleccionado === "mujer":
-        resultadoIcc  = "Esto se clasifica como: <b> SIN RIESGO CARDIOVASCULAR</b>";
+        resultadoIcc  = `Tu ICC es <b> ${formulaIcc} </b> Esto se clasifica como:<p class="textoIccResult text-success"><b> SIN RIESGO CARDIOVASCULAR</b></p> <img class="imagenMujerOk" src="${imagenMujerOk}" alt="ImagenOK">`;
         break;
         
       case formulaIcc  > 0.85 && Generoseleccionado === "mujer":
-        resultadoIcc  = "Esto se clasifica como: <b> CON RIESGO CARDIOVASCULAR </b>";
+        resultadoIcc  = `Tu ICC es <b> ${formulaIcc} </b> Esto se clasifica como: <p class="textoIccResult text-danger"><b> CON RIESGO CARDIOVASCULAR</b></p> <img class="imagenMujerbad" src="${imagenMujerbad}" alt="Imagenbad">`;
         break;
 
+      // CASOS HOMBRES
       case formulaIcc < 0.94 && Generoseleccionado === "hombre":
-        resultadoIcc  = "Esto se clasifica como: <b>SIN RIESGO CARDIOVASCULAR </b>";
+        resultadoIcc  = `Tu ICC es <b> ${formulaIcc} </b> Esto se clasifica como: <p class="textoIccResult text-success"> <b>SIN RIESGO CARDIOVASCULAR </b></p> <img class="imagenHombreOk" src="${imagenHombreOk}" alt="ImagenOK">`;
           break;  
 
       case formulaIcc  > 0.94 && Generoseleccionado === "hombre":
-        resultadoIcc  = "Esto se clasifica como: <b> CON RIESGO CARDIOVASCULAR </b>";
+        resultadoIcc  = `Tu ICC es <b> ${formulaIcc} </b> Esto se clasifica como: <p class="textoIccResult text-danger"><b> CON RIESGO CARDIOVASCULAR </b></p> <img class="imagenHombreBad" src="${imagenHombreBad}" alt="Imagenbad">`;
           break;
 
       default:
-        resultadoIcc = " Verifica que los datos Ingresados sean correctos"
+        resultadoIcc = `<p class="errorImc text-danger">ERROR! <br> Verifica que hayas ingresado los datos de manera correcta</b></p> <img class="imcError" src="${iccimgError}" alt="ImagenOK">`
 
 }
-document.getElementById("resultadoIcc").innerHTML = resultadoIcc;
+  document.getElementById("resultIcc").innerHTML = resultadoIcc;
+  document.getElementById("errorIcc").innerHTML = errorIcc;
 }

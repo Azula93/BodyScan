@@ -107,36 +107,36 @@ function calculoGet ()  {
 
          // Casos mujeres
          case Generoseleccionado === 'mujer' && factorActividad === "Menos de 3 horas semanales":
-             resultadoGet  = `Tu gasto energético total es de ${Math.trunc(formulaMujeresSedentaria)} kcal`;
+             resultadoGet  = `Tu gasto energético total es de <b> ${Math.trunc(formulaMujeresSedentaria)} </b> kcal`;
            break;
 
            case Generoseleccionado === 'mujer' && factorActividad === "3 Horas semanales":
-             resultadoGet  = `Tu gasto energético total es de ${Math.trunc(formulaMujeresLeve)}  kcal`;
+             resultadoGet  = `Tu gasto energético total es de  <b> ${Math.trunc(formulaMujeresLeve)} </b> kcal`;
            break;
 
           case Generoseleccionado === 'mujer' && factorActividad === "6 Horas semanales":
-            resultadoGet  = `Tu gasto energético total es de ${Math.trunc(formulaMujeresModerada)} kcal`;
+            resultadoGet  = `Tu gasto energético total es de <b> ${Math.trunc(formulaMujeresModerada)}</b> kcal`;
           break;
 
           case Generoseleccionado === 'mujer' && factorActividad === "4-5 horas Diarias":
-            resultadoGet  = `Tu gasto energético total es de ${Math.trunc(formulaMujeresIntensa)} kcal`;
+            resultadoGet  = `Tu gasto energético total es de <b> ${Math.trunc(formulaMujeresIntensa)}</b> kcal`;
           break;
 
         //   CASOS HOMBRES
           case Generoseleccionado === 'hombre' && factorActividad === "Menos de 3 horas semanales":
-            resultadoGet  = `Tu gasto energético total es de ${Math.trunc(formulaHombresSedentario)} kcal`;
+            resultadoGet  = `Tu gasto energético total es de <b> ${Math.trunc(formulaHombresSedentario)}</b> kcal`;
           break;
 
           case Generoseleccionado === 'hombre' && factorActividad === "3 Horas semanales":
-            resultadoGet  = `Tu gasto energético total es de ${Math.trunc(formulaHombresLeve)} kcal`;
+            resultadoGet  = `Tu gasto energético total es de <b> ${Math.trunc(formulaHombresLeve)}</b> kcal`;
           break;
 
           case Generoseleccionado === 'hombre' && factorActividad === "6 Horas semanales":
-            resultadoGet  = `Tu gasto energético total es de ${Math.trunc(formulaHombresModerada)} kcal`;
+            resultadoGet  = `Tu gasto energético total es de <b> ${Math.trunc(formulaHombresModerada)}</b> kcal`;
           break;
 
           case Generoseleccionado === 'hombre' && factorActividad === "4-5 horas Diarias":
-            resultadoGet  = `Tu gasto energético total es de ${Math.trunc(formulaHombresIntensa)} kcal`;
+            resultadoGet  = `Tu gasto energético total es de <b> ${Math.trunc(formulaHombresIntensa)}</b> kcal`;
           break;
 
         default:
@@ -148,6 +148,8 @@ function calculoGet ()  {
   document.getElementById("resultadoGet").innerHTML = resultadoGet;
 
 };
+
+const imgMacro = '/assets/img(20).svg'
 
 
 // Funcion para calcular los macronutientes en Gramos
@@ -284,27 +286,27 @@ function calculoGet ()  {
           case Deporteseleccionado === 'Deportista' && factorActividad === 'Menos de 3 horas semanales' && Generoseleccionado ==='mujer' :
         macronutrientesGr = `Tu requerimiento de Carbohidratos es <b>${Math.trunc(GrChosMujerSed)} gr</b> ,<br>
         Tu requerimiento de Proteinas es <b>${Math.trunc(GrProtMujerSed)}gr</b>,<br>
-        Tu requerimiento de Grasas es <b>${Math.trunc(GrGrasasMujerSed)}gr</b>`;
+        Tu requerimiento de Grasas es <b>${Math.trunc(GrGrasasMujerSed)}gr</b> <img class="imgMacro" src="${imgMacro}" alt="ImagenOK">`;
         console.log(macronutrientesGr);
         break;
 
           case Deporteseleccionado === 'Deportista' && factorActividad === '3 Horas semanales'  && Generoseleccionado ==='mujer':
           macronutrientesGr = `Tu requerimiento de Carbohidratos es <b>${Math.trunc(GrChosMujerLeve)}gr</b>,<br>
           Tu requerimiento de Proteinas es<b> ${Math.trunc(GrProtMujerLeve)}gr</b>,<br>
-          Tu requerimiento de Grasas es <b>${Math.trunc(GrGrasasMujerLeve)}gr</b>`;
+          Tu requerimiento de Grasas es <b>${Math.trunc(GrGrasasMujerLeve)}gr</b> <img class="imgMacro" src="${imgMacro}" alt="ImagenOK">`;
           break;
 
           case Deporteseleccionado === 'Deportista' && factorActividad === '6 Horas semanales'  && Generoseleccionado ==='mujer':
           macronutrientesGr = `Tu requerimiento de Carbohidratos es <b>${Math.trunc(GrChosMujerMod)}gr</b>,<br>
           Tu requerimiento de Proteinas es <b>${Math.trunc(GrProtMujerMod)}gr</b>,<br>
-          Tu requerimiento de Grasas es <b>${Math.trunc(GrGrasasMujerMod)}gr</b>`;
+          Tu requerimiento de Grasas es <b>${Math.trunc(GrGrasasMujerMod)}gr</b> <img class="imgMacro" src="${imgMacro}" alt="ImagenOK">`;
           console.log(macronutrientesGr);
           break;
 
           case Deporteseleccionado === 'Deportista' && factorActividad === '4-5 horas Diarias'  && Generoseleccionado ==='mujer':
             macronutrientesGr = `Tu requerimiento de Carbohidratos es <b>${Math.trunc(GrChosMujerInt)}gr</b>,<br>
             Tu requerimiento de Proteinas es <b>${Math.trunc(GrProtMujerInt)}gr</b>,<br>
-            Tu requerimiento de Grasas <b>es ${Math.trunc(GrGrasasMujerInt)}gr</b>`;
+            Tu requerimiento de Grasas <b>es ${Math.trunc(GrGrasasMujerInt)}gr</b> <img class="imgMacro" src="${imgMacro}" alt="ImagenOK">`;
             console.log(macronutrientesGr);
             break;
 
@@ -313,28 +315,28 @@ function calculoGet ()  {
           case Deporteseleccionado === 'No deportista' && factorActividad === 'Menos de 3 horas semanales'  && Generoseleccionado ==='mujer':
            macronutrientesGr = `Tu requerimiento de Carbohidratos es <b>${Math.trunc(GrChosMujerSedND)}gr</b>,<br>
            Tu requerimiento de Proteinas es <b>${Math.trunc(GrProtMujerSedND)}gr</b>,<br>
-           Tu requerimiento de Grasas es <b>${Math.trunc(GrGrasasMujerSedND)}gr</b>`;
+           Tu requerimiento de Grasas es <b>${Math.trunc(GrGrasasMujerSedND)}gr</b> <img class="imgMacro" src="${imgMacro}" alt="ImagenOK">`;
            console.log(macronutrientesGr);
            break;
 
          case Deporteseleccionado === 'No deportista' && factorActividad === '3 Horas semanales'  && Generoseleccionado ==='mujer':
            macronutrientesGr = `Tu requerimiento de Carbohidratos es <b>${Math.trunc(GrChosMujerLeveND)}gr</b>,<br>
            Tu requerimiento de Proteinas es <b>${Math.trunc(GrProtMujerLeveND)}gr</b>,<br>
-           Tu requerimiento de Grasas es <b>${Math.trunc(GrGrasasMujerLeveND)}gr</b>`;
+           Tu requerimiento de Grasas es <b>${Math.trunc(GrGrasasMujerLeveND)}gr</b> <img class="imgMacro" src="${imgMacro}" alt="ImagenOK">`;
            console.log(macronutrientesGr);
            break;
 
          case Deporteseleccionado === 'No deportista' && factorActividad === '6 Horas semanales'  && Generoseleccionado ==='mujer':
             macronutrientesGr = `Tu requerimiento de Carbohidratos es <b>${Math.trunc(GrChosMujerModND)}gr</b>,<br>
             Tu requerimiento de Proteinas es <b>${Math.trunc(GrProtMujerModND)}gr</b>,<br>
-            Tu requerimiento de Grasas es <b>${Math.trunc(GrGrasasMujerModND)}gr</b>`;   
+            Tu requerimiento de Grasas es <b>${Math.trunc(GrGrasasMujerModND)}gr</b> <img class="imgMacro" src="${imgMacro}" alt="ImagenOK">`;   
             console.log(macronutrientesGr);
             break;
 
          case Deporteseleccionado === 'No deportista' && factorActividad === '4-5 horas Diarias'  && Generoseleccionado ==='mujer':
           macronutrientesGr = `Tu requerimiento de Carbohidratos es <b>${Math.trunc(GrChosMujerIntND)}gr</b>,<br>
          Tu requerimiento de Proteinas es <b>${Math.trunc(GrProtMujerIntND)}gr</b>,<br>
-         Tu requerimiento de Grasas es <b>${Math.trunc(GrGrasasMujerIntND)}gr</b>`;   
+         Tu requerimiento de Grasas es <b>${Math.trunc(GrGrasasMujerIntND)}gr</b> <img class="imgMacro" src="${imgMacro}" alt="ImagenOK">`;   
          console.log(macronutrientesGr);
          break;
         
@@ -345,28 +347,28 @@ function calculoGet ()  {
          case Deporteseleccionado === 'Deportista' && factorActividad === 'Menos de 3 horas semanales'  && Generoseleccionado ==='hombre':
          macronutrientesGr = `Tu requerimiento de Carbohidratos es <b>${Math.trunc(GrChosHombresSed)}gr</b>,<br>
          Tu requerimiento de Proteinas es <b>${Math.trunc(GrProtHombreSed)}gr</b>,<br>
-         Tu requerimiento de Grasas es <b>${Math.trunc(GrGrasasHombreSed)}gr</b>`;
+         Tu requerimiento de Grasas es <b>${Math.trunc(GrGrasasHombreSed)}gr</b> <img class="imgMacro" src="${imgMacro}" alt="ImagenOK">`;
          console.log(macronutrientesGr);
          break;
 
          case Deporteseleccionado === 'Deportista' && factorActividad === '3 Horas semanales'  && Generoseleccionado ==='hombre':
           macronutrientesGr = `Tu requerimiento de Carbohidratos es <b>${Math.trunc(GrChosHombreLeve)}gr</b>,<br>
           Tu requerimiento de Proteinas es<b> ${Math.trunc(GrProtHombreLeve)}gr</b>,<br>
-          Tu requerimiento de Grasas es<b> ${Math.trunc(GrGrasasHombreLeve)}gr</b>`;
+          Tu requerimiento de Grasas es<b> ${Math.trunc(GrGrasasHombreLeve)}gr</b> <img class="imgMacro" src="${imgMacro}" alt="ImagenOK">`;
           console.log(macronutrientesGr);
           break;
 
           case Deporteseleccionado === 'Deportista' && factorActividad === '6 Horas semanales'  && Generoseleccionado ==='hombre':
             macronutrientesGr = `Tu requerimiento de Carbohidratos es <b>${Math.trunc(GrChosHombreMod)}gr</b>,<br>
             Tu requerimiento de Proteinas es <b>${Math.trunc(GrProtHombreMod)}gr</b>,<br>
-            Tu requerimiento de Grasas es <b>${Math.trunc(GrGrasasHombreMod)}gr</b>`;
+            Tu requerimiento de Grasas es <b>${Math.trunc(GrGrasasHombreMod)}gr</b> <img class="imgMacro" src="${imgMacro}" alt="ImagenOK">`;
             console.log(macronutrientesGr);
             break;
 
           case Deporteseleccionado === 'Deportista' && factorActividad === '4-5 horas Diarias'  && Generoseleccionado ==='hombre':
            macronutrientesGr = `Tu requerimiento de Carbohidratos es <b>${Math.trunc(GrChosHombreInt)}gr</b>,<br>
            Tu requerimiento de Proteinas es <b>${Math.trunc(GrProtHombreInt)}gr</b>,<br>
-           Tu requerimiento de Grasas es <b>${Math.trunc(GrGrasasHombreInt)}gr</b>`; 
+           Tu requerimiento de Grasas es <b>${Math.trunc(GrGrasasHombreInt)}gr</b> <img class="imgMacro" src="${imgMacro}" alt="ImagenOK">`; 
            console.log(macronutrientesGr);  
            break;
 
@@ -376,25 +378,25 @@ function calculoGet ()  {
           case Deporteseleccionado === 'No deportista' && factorActividad === 'Menos de 3 horas semanales'  && Generoseleccionado ==='hombre':
             macronutrientesGr = `Tu requerimiento de Carbohidratos es <b>${Math.trunc(GrChosHombresSedND)}gr</b>,<br>
             Tu requerimiento de Proteinas es <b>${Math.trunc(GrProtHombreSedND)}gr</b>,<br>
-            Tu requerimiento de Grasas es <b>${Math.trunc(GrGrasasHombreSedND)}gr</b>`;
+            Tu requerimiento de Grasas es <b>${Math.trunc(GrGrasasHombreSedND)}gr</b> <img class="imgMacro" src="${imgMacro}" alt="ImagenOK">`;
             break;
 
           case Deporteseleccionado === 'No deportista' && factorActividad === '3 Horas semanales'  && Generoseleccionado ==='hombre':
               macronutrientesGr = `Tu requerimiento de Carbohidratos es <b>${Math.trunc(GrChosHombreLeveND)}gr</b>,<br>
               Tu requerimiento de Proteinas es <b>${Math.trunc(GrProtHombreLeveND)}gr</b>,<br>
-              Tu requerimiento de Grasas es <b>${Math.trunc(GrGrasasHombreLeveND)}gr</b>`;
+              Tu requerimiento de Grasas es <b>${Math.trunc(GrGrasasHombreLeveND)}gr</b> <img class="imgMacro" src="${imgMacro}" alt="ImagenOK">`;
               break;
 
           case Deporteseleccionado === 'No eportista' && factorActividad == '6 Horas semanales'  && Generoseleccionado ==='hombre':
             macronutrientesGr = `Tu requerimiento de Carbohidratos es <b>${Math.trunc(GrChosHombreModND)}gr</b>,<br>
             Tu requerimiento de Proteinas es <b>${Math.trunc(GrProtHombreModND)}gr</b>,<br>
-            Tu requerimiento de Grasas es <b>${Math.trunc(GrGrasasHombreModND)}gr</b>`;
+            Tu requerimiento de Grasas es <b>${Math.trunc(GrGrasasHombreModND)}gr</b> <img class="imgMacro" src="${imgMacro}" alt="ImagenOK">`;
             break;
 
           case Deporteseleccionado === 'No deportista' && factorActividad === '4-5 horas Diarias'  && Generoseleccionado ==='hombre':
             macronutrientesGr = `Tu requerimiento de Carbohidratos es <b>${Math.trunc(GrChosHombreIntND)}gr</b>,<br>
             Tu requerimiento de Proteinas es <b>${Math.trunc(GrProtHombreIntND)}gr</b>,<br>
-            Tu requerimiento de Grasas es <b>${Math.trunc(GrGrasasHombreIntND)}gr</b>`;
+            Tu requerimiento de Grasas es <b>${Math.trunc(GrGrasasHombreIntND)}gr</b> <img class="imgMacro" src="${imgMacro}" alt="ImagenOK">`;
             break;
             
           default:

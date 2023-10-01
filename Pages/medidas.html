@@ -7,7 +7,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="/sass/style.css">
-    <title>Medidas</title>
+    <title>Medidas Antropométricas</title>
 </head>
 <body>
     <main>
@@ -67,110 +67,105 @@
 
     <!-- Indices antropometricos -->
     <section class="indicesAntrop">
-        <h1 class="titlePrincipal"> Indices Antropmetricos Básicos</h1>
+        <h1 class="titlePrincipal"> Indices Antropmétricos Básicos</h1>
           <h5 class="ImcCalculo-subtitle">¿Que es el IMC?</h5>
     <!-- Calculo IMC -->
     <section class="imcCalculo"> 
 
-        <p class="imcTexto">La obesidad y el sobrepeso se definen como una acumulación anormal o excesiva de grasa que puede ser perjudicial para la salud. Una forma simple de medir la obesidad es el <b>índice de masa corporal (IMC).</b> Se calcula dividiendo el peso de una persona en kilogramos por el cuadrado de la talla en metros.
-
-        En el caso de los adultos, una persona con un <b>IMC igual o superior a 30 es considerada obesa</b> y con <b>un IMC igual o superiora 25 es considerada con sobrepeso.</b>
-            
-        La obesidad es uno de los principales factores de riesgo para numerosas enfermedades crónicas, entre las que se incluyenla diabetes, las enfermedades cardiovasculares, la hipertensión y los accidentes cerebrovasculares, así como varios tiposde cáncer.  Además, los niños con sobrepeso tienen un mayor riesgo de tener sobrepeso o ser obesos en la edad adulta. 
-        <b>Fuente OMS</b></p>
+        <p class="imcTexto"><b>El IMC ó Índice de Masa Corporal,</b> es una medida que se utiliza para evaluar la relación entre el peso y la altura de una persona. <br>
+          El IMC se utiliza comúnmente como indicador de la salud general y para clasificar a las personas en categorías como bajo peso, peso normal, sobrepeso u obesidad.
+        </p>
+         
+        <h2 class="ImcTitle">Calcula tu IMC</h2>
 
         <form class="datosImc" action="#">
 
-        <legend class="ImcTitle">Calcula tu IMC</legend>
-
         <div class="talla-section">
             <label class="form-label" for="talla">Talla en metros: </label>
-            <input class="form-control " type="number" id="talla" placeholder="1.50m"  step="0.01" min="1" maxlength="4" pattern="^[0-9]+"  oninput="limitarNumero(this, 4)"> 
+            <input class="form-control form-control-lg " type="number" id="talla" placeholder="1.50m"  step="0.01" min="1" maxlength="4" pattern="^[0-9]+"  oninput="limitarNumero(this, 4)"> 
             <p id="errorMensaje" style="color: crimson;"></p>
         </div>
          
         <div class="peso-section">
             <label class="form-label"  for="peso">Peso en Kg: </label>
-            <input class="form-control" type="number" id="peso" placeholder="50kg"  min="1" maxlength="3" pattern="^[0-9]+"  oninput="limitarNumero(this, 3)"> 
+            <input class="form-control form-control-lg" type="number" id="peso" placeholder="50kg"  min="1" maxlength="3" pattern="^[0-9]+"  oninput="limitarNumero(this, 3)"> 
             <p id="errorMensaje" style="color: crimson;"></p>
         </div>
     
+      </form>
+
+      <section class="btnImc">
         <button class="btn btn-dark px-3 py-3 mx-auto" type="button" onclick="calculoImc()">
-            Calcular IMC
-        </button>
+          Calcular IMC
+      </button>
+      </section>
 
         <section class="resultadoImc-section">
              <span>
-                <p class="parrafoImc" > <b>Tu IMC es:</b> </p>
-                <p class="resultImc" id="numImc"></p>
+                <p class="parrafoImc"></p>
                 <div class="numeroImc" id="resultadoImc"> </div>
+                <p class="errorImc" id="errorImc"></p>
             </span> 
         </section>
-    </form>
     </section>
     <!-- FIN CALCULO IMC -->
 
     <!-- ICC -->
     <section class="IccCalculo"> 
-      <h5 class="IccCalculo-subtitle">¿Que es el ICC?</h5>
+      <h5 class="IccCalculo-subtitle">¿Qué es el ICC?</h5>
 
-        <p class="IccTexto">El índice cintura-cadera es la relación que resulta de dividir el perímetro de la cintura de
-            una persona por el perímetro de su cadera, ambos valores en centímetros (cm).
-            Los estudios indican que una relación entre cintura y cadera <b> superior a 0.94 varones y
-            a 0.84 en mujeres, está asociada a un aumento en la probabilidad de contraer diversas
-            enfermedades </b>(diabetes mellitus, enfermedades coronarias, tensión arterial, entre
-            otras).
-        
-           <b> Un ICC elevado conlleva un riesgo cardiovascular con una consecuente limitación en la
-            calidad de vida y una disminución de la esperanza de vida.</b> <b>Tomado de neumadrid.org</b>
+        <p class="IccTexto"> <b>El ICC ó Índice de Cintura-Cadera,</b> es una medida que se utiliza para evaluar la distribución de grasa en el cuerpo de una persona. <br>
+           El ICC se utiliza para determinar el riesgo de enfermedades relacionadas con la obesidad y proporciona información sobre la distribución de la grasa corporal, ya que una distribución excesiva de grasa en la zona abdominal puede estar asociada con un mayor riesgo para la salud.
         </p>
 
         <form class="datosIcc" action="#">
 
-        <legend class="IccTitle">Calcula tu ICC</legend>
+           <legend class="IccTitle">Calcula tu ICC</legend>
+           <p class="datosIcc-parrafo"> <b>Elige tu sexo</b></p>
 
-        <section class="IccRadioBtn">
+           <section class="IccRadioBtn">
 
-        <div>
-          <label class="Rbtn">
-            <input type="radio" name="genero" value="mujer"> Mujer
-          </label>
-        </div>
+           <div class="form-check">
+             <input class="form-check-input" type="radio" name="genero" value="mujer">
+             <label class="Rbtn form-check-label">Femenino</label>
+           </div>
 
-        <div>
-          <label class="Rbtn">
-            <input type="radio" name="genero" value="hombre"> Hombre
-          </label>
-        </div>
-      </section>
-        
+           <div class="form-check">
+             <input class="form-check-input" type="radio" name="genero" value="hombre">
+             <label class="Rbtn form-check-label">Masculino</label>
+           </div>
+          </section>
 
-        <div class="PerimetroCintura-section">
-            <label class="form-label" for="cintura">Perimetro Cintura en Cm: </label>
-            <input class="form-control " type="number" id="cintura" placeholder="60cm"  min="2" maxlength="3" pattern="^[0-9]+"  oninput="limitarNumero(this, 3)"> 
-            <p id="errorMensaje" style="color: crimson;"></p>
-        </div>
-         
-        <div class="PerimetroCadera-section">
-            <label class="form-label"  for="cadera">Perimetro Cadera en Cm: </label>
-            <input class="form-control" type="number" id="cadera" placeholder="92cm"  min="1" maxlength="3" pattern="^[0-9]+"  oninput="limitarNumero(this, 3)"> 
-            <p id="errorMensaje" style="color: crimson;"></p>
-        </div>
+           <section class="perimetros-section">
 
-        <!-- <p class="parrafo">El perimetro de este rectangulo es: </p><p class="resultadoPerimetro"> </p> -->
-    
-        <button class="btn btn-dark px-3 py-3 mx-auto" type="button" onclick="calculoIcc()">
+           <div class="PerimetroCintura-section">
+               <label class="form-label" for="cintura">Perimetro Cintura en Cm: </label>
+               <input class="form-control form-control-lg" type="number" id="cintura" placeholder="60cm"  min="2" maxlength="3" pattern="^[0-9]+"  oninput="limitarNumero(this, 3)"> 
+               <p id="errorMensaje" style="color: crimson;"></p>
+           </div>
+
+           <div class="PerimetroCadera-section">
+               <label class="form-label"  for="cadera">Perimetro Cadera en Cm: </label>
+               <input class="form-control form-control-lg" type="number" id="cadera" placeholder="92cm"  min="1" maxlength="3" pattern="^[0-9]+"  oninput="limitarNumero(this, 3)"> 
+               <p id="errorMensaje" style="color: crimson;"></p>
+           </div>
+          </section>
+      </form>
+
+        <section class="iccbtn-section"> 
+          <button class="btnIcc btnIcc btn btn-dark px-3 py-3 mx-auto" type="button" onclick="calculoIcc()">
             Calcular ICC
-        </button>
-
+          </button>
+        </section>
+        
         <section class="resultadoIcc-section">
           <span>
-             <p class="parrafoIcc"><b> Tu ICC es: </b> </p> 
-             <p class="resultIcc" id="numIcc"></p>
-             <div class="numeroIcc" id="resultadoIcc"></div> 
+             <p class="parrafoIcc"></p> 
+             <p class="resultIcc" id="resultIcc"></p>
+             <div class="errorIcc" id="errorIcc"></div> 
           </span> 
         </section>
-    </form>
+    
     </section>
     <!-- FIN ICC -->
     </section>
