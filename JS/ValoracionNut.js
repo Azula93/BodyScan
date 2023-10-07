@@ -1,4 +1,6 @@
 // funcion para limitar la cantidad de numeros ingresados en los inputs
+const getResultImg = '/assets/img(31).svg';
+
 function limitarNumero(input, maxLength) {
   if (input.value.length > maxLength) {
     input.value = input.value.slice(0, maxLength);
@@ -107,40 +109,40 @@ function calculoGet ()  {
 
          // Casos mujeres
          case Generoseleccionado === 'mujer' && factorActividad === "Menos de 3 horas semanales":
-             resultadoGet  = `Tu gasto energético total es de <b> ${Math.trunc(formulaMujeresSedentaria)} </b> kcal`;
+             resultadoGet  = `Tu gasto energético total es de <b> ${Math.trunc(formulaMujeresSedentaria)} </b> kcal <img class="Getimgresult" src="${getResultImg}" alt="ImagenOK">`;
            break;
 
            case Generoseleccionado === 'mujer' && factorActividad === "3 Horas semanales":
-             resultadoGet  = `Tu gasto energético total es de  <b> ${Math.trunc(formulaMujeresLeve)} </b> kcal`;
+             resultadoGet  = `Tu gasto energético total es de  <b> ${Math.trunc(formulaMujeresLeve)} </b> kcal <img class="Getimgresult" src="${getResultImg}" alt="ImagenOK">`;
            break;
 
           case Generoseleccionado === 'mujer' && factorActividad === "6 Horas semanales":
-            resultadoGet  = `Tu gasto energético total es de <b> ${Math.trunc(formulaMujeresModerada)}</b> kcal`;
+            resultadoGet  = `Tu gasto energético total es de <b> ${Math.trunc(formulaMujeresModerada)}</b> kcal <img class="Getimgresult" src="${getResultImg}" alt="ImagenOK">`;
           break;
 
           case Generoseleccionado === 'mujer' && factorActividad === "4-5 horas Diarias":
-            resultadoGet  = `Tu gasto energético total es de <b> ${Math.trunc(formulaMujeresIntensa)}</b> kcal`;
+            resultadoGet  = `Tu gasto energético total es de <b> ${Math.trunc(formulaMujeresIntensa)}</b> kcal <img class="Getimgresult" src="${getResultImg}" alt="ImagenOK">`;
           break;
 
         //   CASOS HOMBRES
           case Generoseleccionado === 'hombre' && factorActividad === "Menos de 3 horas semanales":
-            resultadoGet  = `Tu gasto energético total es de <b> ${Math.trunc(formulaHombresSedentario)}</b> kcal`;
+            resultadoGet  = `Tu gasto energético total es de <b> ${Math.trunc(formulaHombresSedentario)}</b> kcal <img class="Getimgresult" src="${getResultImg}" alt="ImagenOK">`;
           break;
 
           case Generoseleccionado === 'hombre' && factorActividad === "3 Horas semanales":
-            resultadoGet  = `Tu gasto energético total es de <b> ${Math.trunc(formulaHombresLeve)}</b> kcal`;
+            resultadoGet  = `Tu gasto energético total es de <b> ${Math.trunc(formulaHombresLeve)}</b> kcal <img class="Getimgresult" src="${getResultImg}" alt="ImagenOK">`;
           break;
 
           case Generoseleccionado === 'hombre' && factorActividad === "6 Horas semanales":
-            resultadoGet  = `Tu gasto energético total es de <b> ${Math.trunc(formulaHombresModerada)}</b> kcal`;
+            resultadoGet  = `Tu gasto energético total es de <b> ${Math.trunc(formulaHombresModerada)}</b> kcal <img class="Getimgresult" src="${getResultImg}" alt="ImagenOK">`;
           break;
 
           case Generoseleccionado === 'hombre' && factorActividad === "4-5 horas Diarias":
-            resultadoGet  = `Tu gasto energético total es de <b> ${Math.trunc(formulaHombresIntensa)}</b> kcal`;
+            resultadoGet  = `Tu gasto energético total es de <b> ${Math.trunc(formulaHombresIntensa)}</b> kcal <img class="Getimgresult" src="${getResultImg}" alt="ImagenOK">`;
           break;
 
         default:
-            resultadoGet = " ERROR!"
+            resultadoGet = `<p class="textoGetResult text-danger"> Ingresa los datos correspondientes!</p>`
 
     }
 

@@ -1,3 +1,10 @@
+const Vo2Bad = "/assets/img(28).svg";
+const Vo2Regular = "/assets/img(30).svg";
+const Vo2Bueno = "/assets/img(22).svg";
+const Vo2MuyBueno = "/assets/img(29).svg";
+const Vo2Error = "/assets/img(27).svg";
+const Vo2imgthink = "/assets/img (10).svg";
+
 
 // funcion para limitar la cantidad de numeros ingresados en los inputs
 function limitarNumero(input, maxLength) {
@@ -36,32 +43,27 @@ function calculoVo2(){
     switch(true){
 
         case Math.trunc(Mets) <= 9 :
-        resultadoMets = `Tu condicion fisica es MUY MALA`;
-        console.log(resultadoMets);
+        resultadoMets = `<p class="textoVo2Result"> Tu condicion fisica es </p> <br> <p class="textoVo2Result text-danger"> MUY MALA</p> <img class="vo2imgresult" src="${Vo2Bad}" alt="ImagenBad">`;
         break;
 
         case Math.trunc(Mets) == 10 :
-        resultadoMets = `Tu condicion fisica es REGULAR`;
-        console.log(resultadoMets);
+        resultadoMets = `<p class="textoVo2Result"> Tu condicion fisica es </p> <br> <p class="textoVo2Result text-warning"> REGULAR </p> <img class="vo2imgresult" src="${Vo2Regular}" alt="ImagenBad"> `;
         break;
 
         case Math.trunc(Mets) == 11 :
-        resultadoMets = `Tu condicion fisica es SALUDABLE`;
-        console.log(resultadoMets);
+        resultadoMets = `<p class="textoVo2Result"> Tu condicion fisica es </p>  <br> <p class="textoVo2Result text-success"> SALUDABLE </p> <img class="vo2imgresult" src="${Vo2Bueno}" alt="ImagenOK">`;
         break;
 
         case Math.trunc(Mets) == 12 || Math.trunc(Mets) ==13 :
-        resultadoMets = `Tu condicion fisica es BUENA`;
-        console.log(resultadoMets);
+        resultadoMets = `<p class="textoVo2Result"> Tu condicion fisica es  </p><br> <p class="textoVo2Result text-success"> BUENA </p> <img class="vo2imgresult" src="${Vo2Bueno}" alt="ImagenOK">`;
         break;
 
         case Math.trunc(Mets) >= 14 :
-        resultadoMets = `Tu condicion fisica es MUY BUENA`;
-        console.log(resultadoMets);
+        resultadoMets = `<p class="textoVo2Result"> Tu condicion fisica es </p> <br> <p class="textoVo2Result text-success"> MUY BUENA </p> <img class="vo2imgresult" src="${Vo2MuyBueno}" alt="ImagenOK">`;
         break;
 
         default:
-            resultadoMets = `error`;
+            resultadoMets = ` <p class="textoVo2Result text-danger">error </p>`;
     }
     document.getElementById("resultadoMets").innerHTML = resultadoMets;
  }
@@ -96,12 +98,19 @@ function calculoVo2(){
 
     switch(true){
         case ActividadFisicaExpectVida == 'menos 3 v-s':
-            resultadoExpectVida = inactivo;
+            resultadoExpectVida =  `Tu expectativa de vida es  <b>${inactivo} años.</b> <img class="expectimgresult" src="${Vo2imgthink}" alt="Imagenthink">
+            <br>Recuerda que este dato es <b>SOLO UNA ESTIMACIóN.</b> 
+            Tu expectativa de vida puede variar en función de tus habitos de vida y condiciones externas.`;
             break;
 
         case ActividadFisicaExpectVida == 'mas 3 v-s':
-            resultadoExpectVida = activo;
+            resultadoExpectVida = `Tu expectativa de vida es <b>${activo} años.</b> <img class="expectimgresult" src="${Vo2imgthink}" alt="Imagentjink">
+            <br>Recuerda que este dato es <b>SOLO UNA ESTIMACIóN.</b><br>  
+            Tu expectativa de vida puede variar en función de tus habitos de vida y condiciones externas.`;
             break;
+
+        default:
+          resultadoExpectVida = ` <p class="textoVo2Result text-danger"> Verifica que hayas ingresado los datos correctamente!</p> <img class="expectimgerror" src="${Vo2Error}" alt="ImagenError">`;
 
     }
     document.getElementById("resultadoexpectVida").innerHTML = resultadoExpectVida;

@@ -1,4 +1,5 @@
 
+
 // funcion para limitar la cantidad de numeros ingresados en los inputs
 function limitarNumero(input, maxLength) {
     if (input.value.length > maxLength) {
